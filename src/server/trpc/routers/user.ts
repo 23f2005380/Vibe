@@ -1,5 +1,5 @@
-import { z } from 'zod';
-import { publicProcedure, router } from '../index';
+import { z } from "zod";
+import { publicProcedure, router } from "../index";
 
 export const userRouter = router({
   // Query to get all users

@@ -1,17 +1,17 @@
-'use client';
+"use client";
 
-import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
-import { trpc } from '@/utils/trpc';
-import superjson from 'superjson';
-import { ReactNode, useState } from 'react';
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import { trpc } from "@/utils/trpc";
+import superjson from "superjson";
+import { ReactNode, useState } from "react";
 
 export function Providers({ children }: { children: ReactNode }) {
   const [queryClient] = useState(() => new QueryClient());
   const [trpcClient] = useState(() =>
     trpc.createClient({
-      url: '/api/trpc',
+      url: "/api/trpc",
       transformer: superjson,
-    })
+    }),
   );
 
   return (
