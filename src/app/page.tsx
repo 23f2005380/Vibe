@@ -1,6 +1,6 @@
-'use client'
+"use client";
 
-import { trpc } from '@/utils/trpc'
+import { trpc } from "@/utils/trpc";
 
 export default function Home() {
   const usersQuery = trpc.user.getAll.useQuery();
@@ -14,7 +14,7 @@ export default function Home() {
       <ul>
         {usersQuery.data?.map((user) => (
           <li key={user.id}>
-            {user.email} - {user.name ?? 'No Name'}
+            {user.email} - {user.name ?? "No Name"}
           </li>
         ))}
       </ul>
